@@ -29,6 +29,10 @@ services:
       - 9998:9998
 ```
 
+## Add custom tika-config.xml
+
+Modify configuration in `conf/tika-config.xml` and rebuild the image.
+
 ## Building
 
 To build the image from scratch, simply invoke:
@@ -39,6 +43,12 @@ You can then use the following command (using the name you allocated in the buil
 
     docker run -d -p 9998:9998 docker-tika-jaxrs-server
     
+## Testing
+
+To test PDF parser:
+
+`curl -X PUT --data-binary @<path-to-pdf-file.pdf> http://tika.gao.test:9998/tika --header "Content-type: application/pdf"`
+    
 ## More
 
 For more info on Apache Tika Server, visit [Apache Tika Server documentation](http://wiki.apache.org/tika/TikaJAXRS).
@@ -46,6 +56,8 @@ For more info on Apache Tika Server, visit [Apache Tika Server documentation](ht
 ## Author
 
   * Oksana Cyrwus (<connect@oksanac.com>)
+
+  Credits to [David Meikle](https://github.com/LogicalSpark/docker-tikaserver) for the original image.
 
 ## Licence
 

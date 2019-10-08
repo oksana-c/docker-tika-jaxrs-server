@@ -4,6 +4,8 @@ MAINTAINER oksanacyrwus@gmail.com
 ENV TIKA_VERSION 1.22
 ENV TIKA_SERVER_URL https://www.apache.org/dist/tika/tika-server-$TIKA_VERSION.jar
 
+COPY conf/tika-config.xml /usr/local/bin/tika-config.xml
+
 RUN set -x \
     && apt-get -y update \
     && apt-get -y upgrade \
@@ -20,4 +22,6 @@ RUN set -x \
     && apt-get clean -y && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 EXPOSE 9998
-ENTRYPOINT java -jar /tika-server-${TIKA_VERSION}.jar -h 0.0.0.0
+
+ENTRYPOINT ["/usr/sbin/entrypoint.sh"]
+ENTRYPOINT java -jar /tika-server-${TIKA_VERSION}.jar -h 0.0.0.0 --config=/usr/local/bin/tika-config.xml
