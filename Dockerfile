@@ -23,5 +23,4 @@ RUN set -x \
 
 EXPOSE 9998
 
-ENTRYPOINT ["/usr/sbin/entrypoint.sh"]
 ENTRYPOINT java -jar /tika-server-${TIKA_VERSION}.jar -h 0.0.0.0 --config=/usr/local/bin/tika-config.xml
