@@ -1,3 +1,5 @@
+![Docker Image CI](https://github.com/oksana-c/docker-tika-jaxrs-server/workflows/Docker%20Image%20CI/badge.svg?branch=master)
+
 # docker-tika-jaxrs-server
 
 Dockerfile to create a docker image that contains the latest Ubuntu running the Apache Tika 1.23 Server on Port 9998 using Java 11.
