@@ -1,6 +1,6 @@
 # docker-tika-jaxrs-server
 
-Dockerfile to create a docker image that contains the latest Ubuntu running the Apache Tika 1.22 Server on Port 9998 using Java 11.
+Dockerfile to create a docker image that contains the latest Ubuntu running the Apache Tika 1.23 Server on Port 9998 using Java 11.
 
 Out-of-the-box the container also includes dependencies for the GDAL and Tesseract OCR parsers. The following language packs are currently installed:
 * English
